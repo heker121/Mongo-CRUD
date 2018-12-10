@@ -1,0 +1,49 @@
+<% include partials/header %>
+
+    <div class="container col-md-6 col-md-offset-3" id="panel1">
+
+      <h2>User Accounts</h2>
+
+
+
+      <div class="form-group col-md-12">
+
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr class="dropup">
+              <th>Username</th>
+              <th>First Name </th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Delete</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+
+              <% users.forEach(function(user){ %>
+                <tr>
+                  <td><%= user.username %></td>
+                  <td><%= user.name %></td>
+                  <td><%= user.surname %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.phone %></td>
+                  <td>
+                    <a href="/<%= user._id %>/zmazat?_method=DELETE" class="glyphicon glyphicon-remove" ></a></td>
+                  <td><a href="/<%= user._id %>" class="glyphicon glyphicon-eye-open" ></a></td>
+                </tr>
+              <% }) %>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-3 pull-right">
+        <a href="/novy" class="btn btn-primary" id="newaccount">Create New Account</a>
+      </div>
+    </div>
+
+
+
+
+<% include partials/footer %>

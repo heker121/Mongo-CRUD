@@ -1,0 +1,38 @@
+<% include partials/header  %>
+
+<div class="container col-md-6 col-md-offset-3" id="panel2">
+
+  <h2>Edit User Account</h2>
+
+  <form method="post" action="/<%= user._id %>/upravit?_method=PUT">
+    <div class="form-group col-md-4">
+      <label for="fn">First Name</label>
+      <input type="text" class="form-control" name="name" placeholder="<%= user.name %>" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="ln">Last Name</label>
+      <input type="text" class="form-control" name="surname" placeholder="<%= user.surname %>" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="username">User Name</label>
+      <input type="text" class="form-control" name="username" placeholder="<%= user.username %>" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Email address</label>
+      <input type="text" class="form-control" name="email" placeholder="<%= user.email %>">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="phone">Phone Number <span class="small">(optional)</span></label>
+      <input type="tel" class="form-control" name="phone" placeholder="<%= user.phone %>">
+    </div>
+    <div class="col-md-12 text-right">
+      <button type="submit" class="btn btn-primary" >Update User</button>
+      <a href="/" class="btn btn-default btn-lg " role="button" type="submit">Cancel</a>
+
+    </div>
+
+  </form>
+
+</div>
+
+<% include partials/footer %>
